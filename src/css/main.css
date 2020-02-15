@@ -1,0 +1,283 @@
+body {
+    margin: 0;
+    padding: 0;
+    /*
+    font-family: 'Ubuntu', sans-serif;
+    */
+    font-family: 'Roboto Slab', serif;
+
+    color: #261c35;
+    min-width: 1000px;
+}
+
+.container-small {
+    margin: auto;
+    width: 60%;
+}
+
+a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #009688;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 50px;
+  /*left: 50px;*/
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: 45px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  left: 45px;
+  position: relative;
+  background: #494949;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+  position: absolute;
+  width: 300%;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #84b8b2f3;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li {
+  padding: 10px 40px;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+.link-mp {
+    display: block;
+    float: right;
+    margin: 0 5% 0 0;
+    font-size: 180%;
+    cursor: pointer;
+}
+
+.link-mp:hover {
+    color: #009688;
+}
+
+.main-page {
+    background-image: url("../img/icon/undraw22.png");
+    background-size: 100%;
+    background-position: -30%;
+    background-repeat: no-repeat;
+}
+
+.main-page h2 {
+    margin-top: 7%;
+    margin-left: 10%;
+    font-size: 260%;
+    font-family: 'Dancing Script', cursive;
+}
+
+strong {
+    font-size: 55px;
+}
+.main-page h1 {
+    margin-top: 10%;
+    width: 60%;
+    font-size: 35px;
+    line-height: 180%;
+    margin-left: 10%;
+    padding-bottom: 17%;
+    line-height: 80px;
+}
+
+.list .zero {
+    visibility: hidden;
+}
+
+
+.list {
+    font-size: 150%;
+    line-height: 200%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.list a {
+    padding: 1% 3%;
+    font-size: 120%;
+    border: 1px solid black;
+    border-radius: 12px;
+    display: inline-flex;
+    margin: 2% 0 7% 5%;
+    width: 23%;
+}
+
+.list a:hover {
+    border: 1px solid #009688;
+    background: #ffffffc4; 
+}
+
+.list li {
+    list-style: none;
+    height: 120px;
+}
+
+.list a:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 15px rgba(46, 45, 45, 0.301);
+    transform: translateY(-7px);
+    transition: .4s;
+}
+
+.contacts {
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.contacts a {
+    display: inline-block;
+    margin-top: 5%;
+    font-size: 130%;
+    text-align: center;
+    width: 25%;
+    margin-left: 17%;
+}
+
+.contacts img {
+    margin-right: 5%;
+    width: 40%;
+}
+
+.contacts h2 {
+    font-size: 350%;
+    font-weight: 700;
+}
+
+.gallery h2 {
+    font-weight: 700;
+    font-size: 300%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.items {
+    margin-top: 7%;
+    font-size: 18px;
+}
+
+.items a {
+    padding: 1% 3%;
+    border: 1px solid black;
+    border-radius: 12px;
+    display: inline-flex;
+    margin: 1% 0 3% 5%;
+    width: 37%;
+    list-style: none;
+    font-size: 130%;
+}
+
+.items li {
+    height: 140px;
+}
+
+.items a:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 15px rgba(46, 45, 45, 0.301);
+    transform: translateY(-7px);
+    transition: .4s;
+    border: 1px solid #009688;
+    background: #ffffffc4;
+}
+
+.background {
+    background-image: url("../img/undraw3.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.background-one {
+    background-image: url("../img/undraw4.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
